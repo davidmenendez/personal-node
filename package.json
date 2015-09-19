@@ -3,5 +3,8 @@
   "version": "1.0.0",
   "description": "portfolio on node",
   "author": "David Menendez",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
 }
