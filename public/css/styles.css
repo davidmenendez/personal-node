@@ -1,21 +1,46 @@
+/*base*/
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box; }
 
+html {
+  height: 100%; }
+
 body {
   font-family: "Open Sans", sans-serif;
-  background: #333;
-  color: #eee;
-  font-weight: 300;
-  font-size: 18px; }
+  color: #333;
+  height: 100%;
+  background: #eee; }
+
+/*structures*/
+.container {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 15px;
+  overflow: hidden; }
 
 /*typography*/
-h1, h2, h3 {
+h1, h2, h3, p, a, li, span {
+  font-weight: 300;
+  margin-bottom: 15px;
   font-weight: 300; }
 
-h1.branding {
-  font-size: 80px; }
+h1, h2, h3 {
+  line-height: 1.1; }
+
+h1 {
+  font-size: 60px; }
+  h1.branding {
+    font-size: 78px; }
+
+h2 {
+  font-size: 36px; }
+
+p, a {
+  font-size: 18px;
+  line-height: 1.4; }
 
 a {
   color: inherit;
@@ -32,19 +57,23 @@ nav {
   nav li {
     float: left;
     width: 25%;
-    border-bottom: 5px solid transparent; }
+    border-bottom: 5px solid transparent;
+    margin: 0; }
     nav li:hover {
       border-bottom-color: #e25454; }
   nav a {
     display: block;
     padding: 5px 0;
-    width: 100%;
     margin: 0; }
 
 /*landing*/
 #landing {
+  background: #333;
+  background-size: cover;
+  background-attachment: fixed;
   height: 100%;
   width: 100%;
+  color: #eee;
   text-align: center;
   overflow: hidden; }
   #landing header {
