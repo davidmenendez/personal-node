@@ -1,0 +1,72 @@
+/*base*/
+*, *:before, *:after{
+	margin: 0;
+	padding: 0;
+	@include border-box;
+	@include transition(all 200ms ease-in);
+}
+html{
+	height: 100%;
+}
+body{
+	font-family: $font;
+	color: $black;
+	height: 100%;
+	background: $white;
+}
+img{
+	max-width: 100%;
+}
+
+/*structures*/
+.container{
+	max-width: 900px;
+	width: 100%;
+	margin: 0 auto;
+	padding: 15px;
+	overflow: hidden;
+}
+.row{
+	overflow: hidden;
+	margin: 0 -15px 15px -15px;
+}
+.col{
+	float: left;
+	padding: 0 15px;
+}
+.col6{
+	width: 50%;
+}
+.col4{
+	width: 33.33333%;
+}
+.col3{
+	width: 25%;
+}
+@media #{$breakpoint-phone}{
+	.col{
+		float: none;
+	}
+	.col6, .col4, .col3{
+		width: 100%;
+	}
+}
+
+/*general classes*/
+.button{
+	display: inline-block;
+	width: 200px;
+	padding: 15px;
+	text-align: center;
+	background: $red;
+	color: $white;
+	border: 2px solid transparent;
+	&:hover{
+		background: transparent;
+		color: $black;
+		border-color:$black;
+	}
+	@include phone{
+		width: 100%;
+	}
+}

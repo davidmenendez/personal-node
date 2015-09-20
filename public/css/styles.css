@@ -1,8 +1,16 @@
+/*responsive*/
 /*base*/
-* {
+*, *:before, *:after {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; }
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 200ms ease-in;
+  -moz-transition: all 200ms ease-in;
+  -ms-transition: all 200ms ease-in;
+  -o-transition: all 200ms ease-in;
+  transition: all 200ms ease-in; }
 
 html {
   height: 100%; }
@@ -13,6 +21,9 @@ body {
   height: 100%;
   background: #eee; }
 
+img {
+  max-width: 100%; }
+
 /*structures*/
 .container {
   max-width: 900px;
@@ -20,6 +31,46 @@ body {
   margin: 0 auto;
   padding: 15px;
   overflow: hidden; }
+
+.row {
+  overflow: hidden;
+  margin: 0 -15px 15px -15px; }
+
+.col {
+  float: left;
+  padding: 0 15px; }
+
+.col6 {
+  width: 50%; }
+
+.col4 {
+  width: 33.33333%; }
+
+.col3 {
+  width: 25%; }
+
+@media (max-width: 480px) {
+  .col {
+    float: none; }
+  .col6, .col4, .col3 {
+    width: 100%; } }
+
+/*general classes*/
+.button {
+  display: inline-block;
+  width: 200px;
+  padding: 15px;
+  text-align: center;
+  background: #E25454;
+  color: #eee;
+  border: 2px solid transparent; }
+  .button:hover {
+    background: transparent;
+    color: #333;
+    border-color: #333; }
+  @media (max-width: 480px) {
+    .button {
+      width: 100%; } }
 
 /*typography*/
 h1, h2, h3, p, a, li, span {
@@ -68,7 +119,7 @@ nav {
 
 /*landing*/
 #landing {
-  background: #333;
+  background: url("../images/background.jpg") no-repeat;
   background-size: cover;
   background-attachment: fixed;
   height: 100%;
@@ -83,3 +134,10 @@ nav {
     top: 50%;
     padding: 100px 20px;
     margin-top: -180px; }
+
+#workSamples {
+  background: #fff; }
+
+footer {
+  background: #333;
+  color: #eee; }

@@ -1,0 +1,35 @@
+$font: "Open Sans", sans-serif;
+$black: #333;
+$white: #eee;
+$red: #E25454;
+
+@mixin border-box {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box; 
+}
+
+@mixin transition($args...) {
+	-webkit-transition: $args;
+	-moz-transition: $args;
+	-ms-transition: $args;
+	-o-transition: $args;
+	transition: $args;
+}
+
+/*responsive*/
+$phone-width: 480px;
+$tablet-width: 768px;
+$breakpoint-phone: "(max-width: 480px)";
+$breakpoint-tablet: "(max-width: 768px)";
+
+@mixin phone {
+	@media (max-width: #{$phone-width}) {
+		@content;
+	}
+}
+@mixin tablet {
+	@media (max-width: #{$tablet-width}) {
+		@content;
+	}
+}
