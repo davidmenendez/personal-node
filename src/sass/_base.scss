@@ -1,5 +1,5 @@
 /*base*/
-*, *:before, *:after{
+*{
 	margin: 0;
 	padding: 0;
 	@include border-box;
@@ -13,9 +13,13 @@ body{
 	color: $black;
 	height: 100%;
 	background: $white;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-size: 18px;
 }
 img{
 	max-width: 100%;
+	display: block;
 }
 
 /*structures*/
@@ -29,10 +33,18 @@ img{
 .row{
 	overflow: hidden;
 	margin: 0 -15px 15px -15px;
+	&--nomargin{
+		overflow: hidden;
+		margin: 0;
+	}
 }
 .col{
 	float: left;
 	padding: 0 15px;
+	&--nopad{
+		float: left;
+		padding: 0;
+	}
 }
 .col6{
 	width: 50%;

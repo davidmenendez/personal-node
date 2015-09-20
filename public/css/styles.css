@@ -1,6 +1,6 @@
 /*responsive*/
 /*base*/
-*, *:before, *:after {
+* {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
@@ -19,10 +19,14 @@ body {
   font-family: "Open Sans", sans-serif;
   color: #333;
   height: 100%;
-  background: #eee; }
+  background: #eee;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 18px; }
 
 img {
-  max-width: 100%; }
+  max-width: 100%;
+  display: block; }
 
 /*structures*/
 .container {
@@ -35,10 +39,16 @@ img {
 .row {
   overflow: hidden;
   margin: 0 -15px 15px -15px; }
+  .row--nomargin {
+    overflow: hidden;
+    margin: 0; }
 
 .col {
   float: left;
   padding: 0 15px; }
+  .col--nopad {
+    float: left;
+    padding: 0; }
 
 .col6 {
   width: 50%; }
@@ -90,7 +100,7 @@ h2 {
   font-size: 36px; }
 
 p, a {
-  font-size: 18px;
+  font-size: inherit;
   line-height: 1.4; }
 
 a {
