@@ -72,7 +72,7 @@ ul {
 /*general classes*/
 .button {
   display: inline-block;
-  width: 200px;
+  min-width: 200px;
   padding: 15px;
   text-align: center;
   background: #E25454;
@@ -84,10 +84,13 @@ ul {
     border-color: #333; }
   @media (max-width: 480px) {
     .button {
-      width: 100%; } }
+      min-width: 100%; } }
 
 .--whitebg {
   background: #fff; }
+
+.banner {
+  margin-bottom: 30px; }
 
 /*typography*/
 h1, h2, p, a, li, span {
@@ -149,8 +152,10 @@ nav {
 #mainNav li {
   width: 25%; }
 
-#footerNav li {
-  width: 33.33333%; }
+#footerNav {
+  margin-bottom: 15px; }
+  #footerNav li {
+    width: 33.33333%; }
 
 /*nav seen on ever other page*/
 #defaultNav li {

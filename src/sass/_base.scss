@@ -71,7 +71,7 @@ ul{
 /*general classes*/
 .button{
 	display: inline-block;
-	width: 200px;
+	min-width: 200px;
 	padding: 15px;
 	text-align: center;
 	background: $red;
@@ -83,10 +83,13 @@ ul{
 		border-color:$black;
 	}
 	@include phone{
-		width: 100%;
+		min-width: 100%;
 	}
 }
 
 .--whitebg{
 	background: #fff;
+}
+.banner{
+	margin-bottom: 30px;
 }
