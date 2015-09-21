@@ -22,11 +22,15 @@ body {
   background: #eee;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 18px; }
+  font-size: 20px;
+  font-weight: 300; }
 
 img {
   max-width: 100%;
   display: block; }
+
+ul {
+  margin-left: 40px; }
 
 /*structures*/
 .container {
@@ -82,13 +86,15 @@ img {
     .button {
       width: 100%; } }
 
+.--whitebg {
+  background: #fff; }
+
 /*typography*/
-h1, h2, h3, p, a, li, span {
-  font-weight: 300;
-  margin-bottom: 15px;
-  font-weight: 300; }
+h1, h2, p, a, li, span {
+  margin-bottom: 15px; }
 
 h1, h2, h3 {
+  font-weight: 300;
   line-height: 1.1; }
 
 h1 {
@@ -97,27 +103,32 @@ h1 {
     font-size: 78px; }
 
 h2 {
-  font-size: 36px; }
+  font-size: 40px; }
 
-p, a {
+h3 {
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 15px; }
+
+p, a, li, span {
   font-size: inherit;
-  line-height: 1.4; }
+  line-height: 1.4;
+  font-weight: inherit; }
 
 a {
-  color: inherit;
+  color: #E25454;
   text-decoration: none; }
 
 /*nav*/
+/*defauts*/
 nav {
   overflow: hidden; }
   nav ul {
     overflow: hidden;
     list-style: none;
-    max-width: 600px;
-    margin: 0 auto; }
+    margin: 0; }
   nav li {
     float: left;
-    width: 25%;
     border-bottom: 5px solid transparent;
     margin: 0; }
     nav li:hover {
@@ -126,6 +137,30 @@ nav {
     display: block;
     padding: 5px 0;
     margin: 0; }
+
+/*nav on index*/
+#mainNav ul, #footerNav ul {
+  max-width: 600px;
+  margin: 0 auto; }
+
+#mainNav a, #footerNav a {
+  color: #fff; }
+
+#mainNav li {
+  width: 25%; }
+
+#footerNav li {
+  width: 33.33333%; }
+
+/*nav seen on ever other page*/
+#defaultNav li {
+  margin-right: 15px; }
+
+#defaultNav h1 a:hover {
+  color: #E25454; }
+
+#defaultNav a {
+  color: #333; }
 
 /*landing*/
 #landing {
@@ -145,9 +180,8 @@ nav {
     padding: 100px 20px;
     margin-top: -180px; }
 
-#workSamples {
-  background: #fff; }
-
 footer {
   background: #333;
-  color: #eee; }
+  color: #eee;
+  text-align: center;
+  padding: 10px 0; }

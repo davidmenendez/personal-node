@@ -2,11 +2,19 @@ doctype html
 html
   head
     title= title
-    link(rel="stylesheet", href="http://fonts.googleapis.com/css?family=Open+Sans:300,700", type="text/css")
+    link(rel="stylesheet", href="http://fonts.googleapis.com/css?family=Open+Sans:300,400", type="text/css")
     link(rel="stylesheet", href="/css/styles.css")
     meta(name='viewport', content='width=device-width, initial-scale=1')
   body
     block content
   footer
-    div.container
-      p david menendez footer
+    .container
+      nav#footerNav
+        ul
+          li
+            a(href='portfolio.php') PORTFOLIO
+          li
+            a(href='about.php') ABOUT
+          li
+            a(href='about.php#resumeContainer') RESUME
+      small © David Menendez 2015
