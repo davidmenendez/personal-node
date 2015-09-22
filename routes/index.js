@@ -22,8 +22,8 @@ router.get('/portfolio/blackbaud', function(req, res, next) {
 router.get('/portfolio/be-a-character', function(req, res, next) {
 	res.render('portfolio/be-a-character', { title: 'Be A Character' });
 });
-router.get('/portfolio/brigewater', function(req, res, next) {
-	res.render('portfolio/brigewater', { title: 'Bridgwater' });
+router.get('/portfolio/bridgewater', function(req, res, next) {
+	res.render('portfolio/bridgewater', { title: 'Bridgwater' });
 });
 router.get('/portfolio/national-hamburger-month', function(req, res, next) {
 	res.render('portfolio/national-hamburger-month', { title: 'National Hamburger Month' });

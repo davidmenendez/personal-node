@@ -17,7 +17,7 @@ gulp.task('serve', ['styles', 'nodemon'], function() {
 		port: 8001,
 	});
 	gulp.watch('./src/sass/**/*.scss',['styles']);
-	gulp.watch('views/*.jade').on('change', browserSync.reload);
+	gulp.watch('./views/**/*.jade').on('change', browserSync.reload);
 });
 
 gulp.task('nodemon', function (cb) {
