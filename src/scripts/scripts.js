@@ -8,18 +8,18 @@ function getPortfolioEntry(link){
 	}
 	request.onload = function() {
 		if (request.status >= 200 && request.status < 400) {
-			destroyLoader();
-			var original = document.getElementById('portfolioEntry');
-			original.parentNode.removeChild(original);
-			var resp = request.responseText;
-			var container = document.implementation.createHTMLDocument().documentElement;
-			container.innerHTML = resp;
-			var payload = container.querySelector('#portfolioEntry');
-			document.querySelector('#siteHeader').insertAdjacentHTML('afterend', payload.outerHTML);
-			attachGetPortfolioEntry();
-			//scrollToTop(1000);
-			window.scrollTo(0, 0);
-			history.pushState(null, null, request.responseURL);
+			pageAnimate(function(){
+				destroyLoader();
+				var original = document.getElementById('portfolioEntry');
+				original.parentNode.removeChild(original);
+				var resp = request.responseText;
+				var container = document.implementation.createHTMLDocument().documentElement;
+				container.innerHTML = resp;
+				var payload = container.querySelector('#portfolioEntry');
+				document.querySelector('#siteHeader').insertAdjacentHTML('afterend', payload.outerHTML);
+				attachGetPortfolioEntry();
+				history.pushState(null, null, request.responseURL);
+			});
 		} 
 		else {
 			console.log('balls');
@@ -29,6 +29,14 @@ function getPortfolioEntry(link){
 		console.log(request);
 	};
 	request.send();
+}
+
+function pageAnimate(callback){
+	document.querySelector('#portfolioEntry').classList.add('fadeout');
+	scrollToTop(2000);
+	window.setTimeout(function(){
+		callback();
+	}, 2000);
 }
 
 function attachGetPortfolioEntry()

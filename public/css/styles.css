@@ -297,3 +297,6 @@ circle {
 
 .modalfade {
   opacity: 1; }
+
+.fadeout {
+  opacity: 0; }
