@@ -93,7 +93,8 @@ ul {
   margin-bottom: 30px; }
 
 .workpreview a {
-  display: block; }
+  display: block;
+  margin: 0; }
 
 .workpreview figure {
   position: relative;
