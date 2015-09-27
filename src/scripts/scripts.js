@@ -3,7 +3,6 @@ function getPortfolioEntry(link){
 	var request = new XMLHttpRequest();
 	request.open('GET', link, true);
 	request.onloadstart = function(){
-		document.querySelector('body').classList.add('fadeout');
 		window.setTimeout(function(){
 			window.scrollTo(0,0);
 		}, 200);
@@ -12,7 +11,6 @@ function getPortfolioEntry(link){
 	request.onload = function() {
 		if (request.status >= 200 && request.status < 400) {
 			window.setTimeout(function(){
-				document.querySelector('body').classList.remove('fadeout');
 				destroyLoader();
 				var original = document.getElementById('portfolioEntry');
 				original.parentNode.removeChild(original);
@@ -37,6 +35,7 @@ function getPortfolioEntry(link){
 function createLoader(){
 	var svg = document.createElement('svg');
 	var circle = document.createElement('circle');
+	var background = document.createElement('div');
 	var container = document.createElement('div');
 	svg.setAttribute('class', 'svg');
 	svg.setAttribute('width', '200');
@@ -44,17 +43,22 @@ function createLoader(){
 	circle.setAttribute('cx', '100');
 	circle.setAttribute('cy', '100');
 	circle.setAttribute('r', '50');
+	background.setAttribute('class', '--modal-background');
 	container.setAttribute('class', 'modal');
 	svg.innerHTML = circle.outerHTML;
-	container.innerHTML = svg.outerHTML;
+	background.innerHTML = svg.outerHTML;
+	container.innerHTML = background.outerHTML;
 	document.querySelector('#siteHeader').insertAdjacentHTML('afterend', container.outerHTML);
 	window.setTimeout(function(){
-		document.querySelector('.modal').classList.add('modalfade');
-	}, 200);
+		document.querySelector('.modal').classList.add('fadein');
+	}, 1);
+	window.setTimeout(function(){
+		document.querySelector('.--modal-background').classList.add('fadein');
+	}, 1000);
 }
 function destroyLoader(){
 	modal = document.querySelector('.modal');
-	document.querySelector('.modal').classList.remove('modalfade');
+	document.querySelector('.modal').classList.remove('fadein');
 	window.setTimeout(function(){
 		modal.parentNode.removeChild(modal);
 	}, 200);

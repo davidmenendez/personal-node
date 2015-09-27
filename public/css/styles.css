@@ -290,12 +290,16 @@ circle {
   position: fixed;
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.75);
   top: 0;
   left: 0;
+  background: #eee;
   opacity: 0; }
 
-.modalfade {
+.--modal-background {
+  opacity: 0;
+  height: 100%; }
+
+.fadein {
   opacity: 1; }
 
 .fadeout {
