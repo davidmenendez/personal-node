@@ -3,12 +3,16 @@ function getPortfolioEntry(link){
 	var request = new XMLHttpRequest();
 	request.open('GET', link, true);
 	request.onloadstart = function(){
-		console.log('loader init');
+		document.querySelector('body').classList.add('fadeout');
+		window.setTimeout(function(){
+			window.scrollTo(0,0);
+		}, 200);
 		createLoader();
 	}
 	request.onload = function() {
 		if (request.status >= 200 && request.status < 400) {
-			pageAnimate(function(){
+			window.setTimeout(function(){
+				document.querySelector('body').classList.remove('fadeout');
 				destroyLoader();
 				var original = document.getElementById('portfolioEntry');
 				original.parentNode.removeChild(original);
@@ -19,7 +23,7 @@ function getPortfolioEntry(link){
 				document.querySelector('#siteHeader').insertAdjacentHTML('afterend', payload.outerHTML);
 				attachGetPortfolioEntry();
 				history.pushState(null, null, request.responseURL);
-			});
+			}, 200);
 		} 
 		else {
 			console.log('balls');
@@ -29,35 +33,6 @@ function getPortfolioEntry(link){
 		console.log(request);
 	};
 	request.send();
-}
-
-function pageAnimate(callback){
-	document.querySelector('#portfolioEntry').classList.add('fadeout');
-	scrollToTop(2000);
-	window.setTimeout(function(){
-		callback();
-	}, 2000);
-}
-
-function attachGetPortfolioEntry()
-{
-	var btn = document.querySelector('.button');
-	btn.addEventListener('click', function(e){
-		e.preventDefault();
-		var link = this.href;
-		getPortfolioEntry(link);
-	}, false);
-}
-attachGetPortfolioEntry();
-
-function scrollToTop(scrollDuration) {
-	var scrollStep = -window.scrollY / (scrollDuration / 15),
-	scrollInterval = setInterval(function(){
-		if ( window.scrollY != 0 ) {
-			window.scrollBy( 0, scrollStep );
-		}
-		else clearInterval(scrollInterval); 
-	});
 }
 function createLoader(){
 	var svg = document.createElement('svg');
@@ -84,3 +59,13 @@ function destroyLoader(){
 		modal.parentNode.removeChild(modal);
 	}, 200);
 }
+function attachGetPortfolioEntry()
+{
+	var btn = document.querySelector('.button');
+	btn.addEventListener('click', function(e){
+		e.preventDefault();
+		var link = this.href;
+		getPortfolioEntry(link);
+	}, false);
+}
+attachGetPortfolioEntry();
