@@ -53,7 +53,10 @@ function createLoader(){
 		document.querySelector('.modal').classList.add('fadein');
 	}, 1);
 	window.setTimeout(function(){
-		document.querySelector('.--modal-background').classList.add('fadein');
+		var domBackground = document.querySelector('.--modal-background');
+		if(domBackground){
+			domBackground.classList.add('fadein');
+		}
 	}, 1000);
 }
 function destroyLoader(){
