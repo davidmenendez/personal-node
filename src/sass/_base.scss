@@ -7,16 +7,18 @@
 }
 html{
 	height: 100%;
-}
-body{
 	font-family: $font;
 	color: $black;
-	height: 100%;
-	background: $offwhite;
+	font-size: 100%;
+	font-weight: 300;
+	line-height: 1.5;
+	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	font-size: 20px;
-	font-weight: 300;
+}
+body{
+	height: 100%;
+	background: $offwhite;
 }
 img{
 	max-width: 100%;
@@ -60,8 +62,9 @@ ul{
 	width: 25%;
 }
 @media #{$breakpoint-phone}{
-	.col{
+	.col, .col--nopad{
 		float: none;
+		margin-bottom: 15px;
 	}
 	.col6, .col4, .col3{
 		width: 100%;
@@ -77,6 +80,7 @@ ul{
 	background: $red;
 	color: $offwhite;
 	border: 2px solid transparent;
+	margin: 0 1em 1em 0;
 	&:hover{
 		background: transparent;
 		color: $black;
@@ -84,6 +88,7 @@ ul{
 	}
 	@include phone{
 		min-width: 100%;
+		margin: 0 0 1em 0;
 	}
 }
 
@@ -152,4 +157,26 @@ ul{
 		-webkit-transform: scale(1.5);
 		transform: scale(1.5);
 	}
+}
+
+.modal{
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	background: #eee;
+	opacity: 0;
+}
+.--modal-background{
+	opacity: 0;
+	height: 100%;
+}
+
+.fadein{
+	opacity: 1;
+}
+
+.fadeout{
+	opacity: 0;
 }

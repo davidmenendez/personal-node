@@ -1,29 +1,33 @@
 /*typography*/
-h1, h2, p, a, li, span{
-	margin-bottom: 15px;
-}
-h1, h2, h3{
+h1, h2{
 	font-weight: 300;
 	line-height: 1.1;
+	margin-bottom: .5em;
 }
 h1{
-	font-size: 60px;
+	font-size: 4em;
 	&.branding{
-		font-size: 78px;
+		font-size: 5em;
+		@include phone{
+			font-size: 3em;
+		}
+	}
+	@include phone{
+		font-size: 3em;
 	}
 }
 h2{
-	font-size: 40px;
+	font-size: 2em;
 }
 h3{
-	font-size: 20px;
 	font-weight: 400;
-	margin-bottom: 15px;
+	margin-bottom: 1em;
 }
-p, a, li, span{
-	font-size: inherit;
-	line-height: 1.4;
-	font-weight: inherit;
+h3, p, a, li, span{
+	font-size: 1.125em;
+}
+p{
+	margin-bottom: 1em;
 }
 a{
 	color: $red;

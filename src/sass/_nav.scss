@@ -12,7 +12,7 @@ nav{
 		border-bottom: 5px solid transparent;
 		margin: 0;
 		&:hover{
-			border-bottom-color: #e25454;
+			border-bottom-color: $red;
 		}
 	}
 	a{
@@ -29,12 +29,30 @@ nav{
 		margin: 0 auto;
 	}
 	a{
-		color: #fff;
+		color: $white;
 	}
 }
 #mainNav{
 	li{
 		width: 25%;
+		@include phone{
+			float: none;
+			width: 100%;
+			border: 2px solid $offwhite;
+			margin-bottom: 25px;
+			&:hover{
+				background: #eee;
+				border-color: #333;
+				a{
+					color: $black;
+				}
+			}
+		}
+	}
+	a{
+		@include phone{
+			padding: 15px 0;
+		}
 	}
 }
 #footerNav{

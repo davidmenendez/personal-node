@@ -68,7 +68,7 @@ function destroyLoader(){
 }
 function attachGetPortfolioEntry()
 {
-	var btn = document.querySelector('.button');
+	var btn = document.querySelector('.--button-async');
 	btn.addEventListener('click', function(e){
 		e.preventDefault();
 		var link = this.href;
