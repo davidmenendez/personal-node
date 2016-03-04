@@ -1,5 +1,8 @@
 extends reusables/layout
 
+block vars
+  - var title="Portfolio"
+
 block content
   include reusables/nav
   section#portfolio.--whitebg
@@ -14,7 +17,7 @@ block content
               figcaption
                 h3 hadassah
         div.col--nopad.col4.workpreview
-          a(href="cportfolio/olorado-childrens-hospital")
+          a(href="portfolio/colorado-childrens-hospital")
             figure
               img(src="http://placehold.it/500x500")
               figcaption
