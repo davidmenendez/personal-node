@@ -3,6 +3,8 @@ var sass = require('gulp-sass');
 var browserSync = require('browser-sync').create();
 var nodemon = require('gulp-nodemon');
 var uglify = require('gulp-uglify');
+var jade = require('jade');
+var gulpJade = require('gulp-jade');
 
 gulp.task('uglify', function() {
 	return gulp.src('./src/scripts/**/scripts.js')
@@ -38,6 +40,15 @@ gulp.task('nodemon', function (cb) {
 			started = true; 
 		} 
 	});
+});
+
+gulp.task('deploy', function() {
+	return gulp.src('views/**/*.jade')
+	.pipe(gulpJade({
+      jade: jade,
+      pretty: true
+    }))
+	.pipe(gulp.dest('public/deploy'));
 });
 
 gulp.task('default', ['serve']);

@@ -1,5 +1,8 @@
 extends ../reusables/layout
 
+block vars
+  - var title="Blackbaud"
+
 block content
   include ../reusables/nav
   article#portfolioEntry
@@ -28,4 +31,4 @@ block content
         p The work I do for Blackbaud is primarily front-end related work. A lot of HTML, CSS, and Javascript. At Blackbaud I work with their product called Luminate Online, which is their fundraising software. The work I do can be put into two categories- deployments and retainers.
         p With deployments I do the majority of the front-end work. The process starts with a PSD from one of our designers or a third party vender and ends with a complete cut up of the design into a fully functional and responsive site. Part of this process is integrating the HTML into the product, which is usually used as a template for product built pages.
         p Retainers typically consist of working directly with clients to do bug fixes or small one off projects. This typically involves me working heavily with the product to set up new team raising options. The entire reason for the team I work with is to do custom builds of the product, so there is a lot of manipulation of the product pages with javascript and CSS.
-        a.button(href="be-a-character") #BeACharacter
+        a.button.--button-async(href="be-a-character") #BeACharacter
