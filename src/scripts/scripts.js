@@ -69,10 +69,12 @@ function destroyLoader(){
 function attachGetPortfolioEntry()
 {
 	var btn = document.querySelector('.--button-async');
-	btn.addEventListener('click', function(e){
-		e.preventDefault();
-		var link = this.href;
-		getPortfolioEntry(link);
-	}, false);
+	if(btn){
+		btn.addEventListener('click', function(e){
+			e.preventDefault();
+			var link = this.href;
+			getPortfolioEntry(link);
+		}, false);
+	}
 }
 attachGetPortfolioEntry();

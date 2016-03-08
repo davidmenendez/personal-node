@@ -2,8 +2,8 @@
 *, *:before, *:after{
 	margin: 0;
 	padding: 0;
-	@include border-box;
-	@include transition(all 200ms ease-in);
+	box-sizing: border-box;
+	transition: all 200ms ease-in;
 }
 html{
 	height: 100%;

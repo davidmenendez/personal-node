@@ -1,18 +1,24 @@
 /*nav*/
 /*defauts*/
 nav{
-	overflow: hidden;
 	ul{
-		overflow: hidden;
 		list-style: none;
 		margin: 0;
 	}
 	li{
 		float: left;
-		border-bottom: 5px solid transparent;
 		margin: 0;
+		&:after{
+			content: "";
+			border-bottom: 5px solid transparent;
+			display: block;
+			transform: translate(0, 5px);
+		}
 		&:hover{
-			border-bottom-color: $red;
+			&:after{
+				border-color: $red;
+				transform: translate(0, 0);
+			}
 		}
 	}
 	a{
