@@ -1,58 +1,58 @@
 /*nav*/
 /*defauts*/
 nav{
-	text-transform: uppercase;
-	ul{
-		list-style: none;
-		max-width: 600px;
-		width: 100%;
-		margin: 0 auto;
-	}
-	li{
-		float: none;
-		width: 100%;
-		&:after{
-			content: "";
-			border-bottom: 5px solid transparent;
-			display: block;
-			transform: translate(0, 5px);
-		}
-		&:hover{
-			&:after{
-				border-color: $red;
-				transform: translate(0, 0);
-			}
-		}
-		@include breakpoint(sm){
-			float: left;
-			width: 25%;
-		}
-	}
-	a{
-		color: $white;
-		display: block;
-		padding: 5px 0;
-	}
+  text-transform: uppercase;
+  ul{
+    list-style: none;
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  li{
+    float: none;
+    width: 100%;
+    &:after{
+      content: "";
+      border-bottom: 5px solid transparent;
+      display: block;
+      transform: translate(0, 5px);
+    }
+    &:hover{
+      &:after{
+        border-color: $red;
+        transform: translate(0, 0);
+      }
+    }
+    @include breakpoint(sm){
+      float: left;
+      width: 25%;
+    }
+  }
+  a{
+    color: $white;
+    display: block;
+    padding: 5px 0;
+  }
 }
 
 #defaultNav{
-	ul{
-		max-width: 100%;
-	}
-	li{
-		float: none;
-		display: inline-block;
-		@include breakpoint(sm){
-			width: auto;
-			margin: 0 15px 0 0;
-		}
-	}
-	a{
-		color: $black;
-	}
+  ul{
+    max-width: 100%;
+  }
+  li{
+    float: none;
+    display: inline-block;
+    @include breakpoint(sm){
+      width: auto;
+      margin: 0 15px 0 0;
+    }
+  }
+  a{
+    color: $black;
+  }
 }
 
 &.nav--active:after{
-	border-color: $red;
-	transform: translate(0, 0);
+  border-color: $red;
+  transform: translate(0, 0);
 }

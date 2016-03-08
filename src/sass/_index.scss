@@ -1,24 +1,24 @@
 /*landing*/
 #landing{
-	background-position: 50% 50%;
-	background: url("../images/background.jpg") no-repeat;
-	background-size: cover;
-	background-attachment: fixed;
-	min-height: 100vh;
-	width: 100%;
-	color: $offwhite;
-	text-align: center;
-	header{
-		padding: 20px;
-		margin-top: 0;
-		position: static;
-		background: rgba(0,0,0,0.75);
-		width: 100%;
-		top: 50%;
-		@include breakpoint(sm){
-			padding: 100px 20px;
-			margin-top: -180px;
-			position: absolute;
-		}
-	}
+  background-position: 50% 50%;
+  background: url("../images/background.jpg") no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+  width: 100%;
+  color: $offwhite;
+  text-align: center;
+  header{
+    padding: 20px;
+    margin-top: 0;
+    position: static;
+    background: rgba(0,0,0,0.75);
+    width: 100%;
+    top: 50%;
+    @include breakpoint(sm){
+      padding: 100px 20px;
+      margin-top: -180px;
+      position: absolute;
+    }
+  }
 }
