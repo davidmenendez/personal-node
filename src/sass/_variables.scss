@@ -4,19 +4,22 @@ $white: #fff;
 $offwhite: #eee;
 $red: #E25454;
 
-/*responsive*/
-$phone-width: 480px;
-$tablet-width: 768px;
-$breakpoint-phone: "(max-width: 480px)";
-$breakpoint-tablet: "(max-width: 768px)";
+@mixin breakpoint($breakpoint) {
+  @if $breakpoint == "sm" {
+    @media (min-width: 767px) {
+      @content;
+    }
+  }
 
-@mixin phone {
-	@media (max-width: #{$phone-width}) {
-		@content;
-	}
-}
-@mixin tablet {
-	@media (max-width: #{$tablet-width}) {
-		@content;
-	}
+  @else if $breakpoint == "md" {
+    @media (min-width: 992px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "lg" {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }
 }

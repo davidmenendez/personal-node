@@ -1,7 +1,8 @@
 extends reusables/layout
 
 block vars
-  - var title="About"
+  - var title="About";
+  - var selected = "about";
 
 block content
   include reusables/nav
@@ -49,7 +50,7 @@ block content
       p Able to effectively communicate with users to best determine their needs, work with users to keep them updated in a timely manner, and deliver a quality product that satisfies the user’s needs.
       p Knowledge of search engine optimization best practices to ensure a healthy amount of traffic to a site. Able to implement google analytics in a meaningful and effective way to provide clients with important user habit information.
       div.row
-        div.col.col6
+        div.col.col2
           ul
             li 
               p HTML5
@@ -69,7 +70,7 @@ block content
               p Node.js
             li 
               p Frameworks (React.js, Angular.js, jQuery, etc)
-        div.col.col6
+        div.col.col2
           ul
             li 
               p AJAX

@@ -14,7 +14,10 @@ gulp.task('uglify', function() {
 
 gulp.task('styles', function() {
 	gulp.src('./src/sass/**/styles.scss')
-	.pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+	.pipe(sass({
+		//outputStyle: 'compressed'
+		outputStyle: 'expanded'
+	}).on('error', sass.logError))
 	.pipe(gulp.dest('public/css/'))
 	.pipe(browserSync.stream());
 });

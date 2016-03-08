@@ -1,13 +1,16 @@
 /*nav*/
 /*defauts*/
 nav{
+	text-transform: uppercase;
 	ul{
 		list-style: none;
-		margin: 0;
+		max-width: 600px;
+		width: 100%;
+		margin: 0 auto;
 	}
 	li{
-		float: left;
-		margin: 0;
+		float: none;
+		width: 100%;
 		&:after{
 			content: "";
 			border-bottom: 5px solid transparent;
@@ -20,66 +23,36 @@ nav{
 				transform: translate(0, 0);
 			}
 		}
-	}
-	a{
-		display: block;
-		padding: 5px 0;
-		margin: 0;
-	}
-}
-
-/*nav on index*/
-#mainNav, #footerNav{
-	ul{
-		max-width: 600px;
-		margin: 0 auto;
+		@include breakpoint(sm){
+			float: left;
+			width: 25%;
+		}
 	}
 	a{
 		color: $white;
+		display: block;
+		padding: 5px 0;
 	}
 }
-#mainNav{
-	li{
-		width: 25%;
-		@include phone{
-			float: none;
-			width: 100%;
-			border: 2px solid $offwhite;
-			margin-bottom: 25px;
-			&:hover{
-				background: #eee;
-				border-color: #333;
-				a{
-					color: $black;
-				}
-			}
-		}
-	}
-	a{
-		@include phone{
-			padding: 15px 0;
-		}
-	}
-}
-#footerNav{
-	margin-bottom: 15px;
-	li{
-		width: 33.33333%;
-	}
-}
-/*nav seen on ever other page*/
+
 #defaultNav{
-	li{
-		margin-right: 15px;
+	ul{
+		max-width: 100%;
 	}
-	h1{
-		a{
-			&:hover{
-				color: $red;
-			}
+	li{
+		float: none;
+		display: inline-block;
+		@include breakpoint(sm){
+			width: auto;
+			margin: 0 15px 0 0;
 		}
 	}
 	a{
 		color: $black;
 	}
+}
+
+&.nav--active:after{
+	border-color: $red;
+	transform: translate(0, 0);
 }

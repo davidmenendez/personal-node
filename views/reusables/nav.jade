@@ -1,12 +1,15 @@
+-var menu = { 'portfolio': '/portfolio', 'about': '/about', 'resume': '/about#resumeAnchor' };
+
 header#siteHeader
   div.container
     nav#defaultNav
       h1
         a(href='/') David Menendez
       ul.clear
-        li
-          a(href='/portfolio') PORTFOLIO
-        li
-          a(href='/about') ABOUT
-        li
-          a(href='/about#resumeAnchor') RESUME
+        each val, key in menu
+          if selected === key
+            li.nav--active
+              a(href=val)= key
+          else
+            li
+              a(href=val)= key

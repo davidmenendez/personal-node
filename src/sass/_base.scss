@@ -6,7 +6,6 @@
 	transition: all 200ms ease-in;
 }
 html{
-	height: 100%;
 	font-family: $font;
 	color: $black;
 	font-size: 100%;
@@ -17,7 +16,6 @@ html{
 	-moz-osx-font-smoothing: grayscale;
 }
 body{
-	height: 100%;
 	background: $offwhite;
 }
 img{
@@ -37,58 +35,58 @@ ul{
 	overflow: hidden;
 }
 .row{
-	overflow: hidden;
 	margin: 0 -15px 15px -15px;
 	&--nomargin{
-		overflow: hidden;
 		margin: 0;
+	}
+	&:before{
+		content: " ";
+		display: table;
+	}
+	&:after{
+		content: " ";
+		display: table;
+		clear: after;
 	}
 }
 .col{
 	float: left;
 	padding: 0 15px;
+	float: none;
+	margin-bottom: 15px;
+	width: 100%;
 	&--nopad{
-		float: left;
 		padding: 0;
+		margin: 0;
 	}
-}
-.col6{
-	width: 50%;
-}
-.col4{
-	width: 33.33333%;
-}
-.col3{
-	width: 25%;
-}
-@media #{$breakpoint-phone}{
-	.col, .col--nopad{
-		float: none;
-		margin-bottom: 15px;
-	}
-	.col6, .col4, .col3{
-		width: 100%;
+	@include breakpoint(sm){
+		float: left;
+		@for $i from 1 through 12{
+			&#{$i}{
+				width: (1 / $i) * 100%;
+			}
+		}
 	}
 }
 
 /*general classes*/
 .button{
+	min-width: 100%;
+	margin: 0 0 15px 0;
 	display: inline-block;
-	min-width: 200px;
 	padding: 15px;
 	text-align: center;
 	background: $red;
 	color: $offwhite;
 	border: 2px solid transparent;
-	margin: 0 1em 1em 0;
+	@include breakpoint(sm){
+		margin: 0 15px 15px 0;
+		min-width: 200px;
+	}
 	&:hover{
 		background: transparent;
 		color: $black;
 		border-color:$black;
-	}
-	@include phone{
-		min-width: 100%;
-		margin: 0 0 1em 0;
 	}
 }
 
