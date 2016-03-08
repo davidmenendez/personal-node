@@ -1,35 +1,36 @@
 /*typography*/
 h1, h2{
-	font-weight: 300;
-	line-height: 1.1;
-	margin-bottom: .5em;
+  font-weight: 300;
+  line-height: 1.1;
+  margin-bottom: 15px;
 }
 h1{
-	font-size: 4em;
-	&.branding{
-		font-size: 5em;
-		@include phone{
-			font-size: 3em;
-		}
-	}
-	@include phone{
-		font-size: 3em;
-	}
+  font-size: 3em;
+  &.branding{
+    @include breakpoint(sm){
+      font-size: 5em;
+    }
+  }
+  @include breakpoint(sm){
+    font-size: 4em;
+  }
 }
 h2{
-	font-size: 2em;
+  font-size: 2em;
 }
 h3{
-	font-weight: 400;
-	margin-bottom: 1em;
+  font-weight: 400;
+  margin-bottom: 15px;
 }
 h3, p, a, li, span{
-	font-size: 1.125em;
+  font-size: 1.125em;
 }
 p{
-	margin-bottom: 1em;
+  margin-bottom: 15px;
 }
 a{
-	color: $red;
-	text-decoration: none;
+  color: $red;
+  text-decoration: none;
 }
+
+.selected{color: $red;}

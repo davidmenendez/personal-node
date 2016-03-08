@@ -2,6 +2,7 @@ extends ../reusables/layout
 
 block vars
   - var title="Hadassah"
+  - var selected = "portfolio";
 
 block content
   include ../reusables/nav
@@ -11,11 +12,11 @@ block content
         h2 Hadassah
         img(src="http://placehold.it/1000x300").banner
         div.row
-          div.col.col4
+          div.col.col3
             img(src="http://placehold.it/500x500")
-          div.col.col4
+          div.col.col3
             img(src="http://placehold.it/500x500")
-          div.col.col4
+          div.col.col3
             img(src="http://placehold.it/500x500")
     section#projectDescription
       div.container
