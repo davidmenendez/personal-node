@@ -22,7 +22,7 @@ gulp.task('styles', function() {
 	.pipe(browserSync.stream());
 });
 
-gulp.task('serve', ['styles', 'nodemon'], function() {
+gulp.task('watcb', ['styles', 'nodemon'], function() {
 	browserSync.init(null, {
 		proxy: 'http://localhost:8000',
 		files: ['public/**/*.*'],
@@ -54,4 +54,4 @@ gulp.task('deploy', function() {
 	.pipe(gulp.dest('public/deploy'));
 });
 
-gulp.task('default', ['serve']);
+gulp.task('default', ['watch']);
