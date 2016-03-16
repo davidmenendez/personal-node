@@ -48,9 +48,9 @@ gulp.task('nodemon', function (cb) {
 gulp.task('deploy', function() {
 	return gulp.src('views/**/*.jade')
 	.pipe(gulpJade({
-      jade: jade,
-      pretty: true
-    }))
+    jade: jade,
+    pretty: true
+  }))
 	.pipe(gulp.dest('public/deploy'));
 });
 

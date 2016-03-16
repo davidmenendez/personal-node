@@ -1,33 +1,33 @@
 /*~~~HELPERS~~~*/
 .clear:before,
 .clear:after {
-	content: " ";
-	display: table;
+  content: " ";
+  display: table;
 }
 
 .clear:after {
-	clear: both;
+  clear: both;
 }
 
 .button{
-	min-width: 100%;
-	display: inline-block;
-	padding: 15px;
-	text-align: center;
-	background: $red;
-	color: $offwhite;
-	border: 2px solid transparent;
-	@include breakpoint(sm){
-		margin: 0 15px 0 0;
-		min-width: 200px;
-	}
-	&:hover{
-		background: transparent;
-		color: $black;
-		border-color:$black;
-	}
+  min-width: 100%;
+  display: inline-block;
+  padding: 15px;
+  text-align: center;
+  background: $red;
+  color: $offwhite;
+  border: 2px solid transparent;
+  @include breakpoint(sm){
+    margin: 0 15px 0 0;
+    min-width: 200px;
+  }
+  &:hover{
+    background: transparent;
+    color: $black;
+    border-color:$black;
+  }
 }
 
 .section--whitebg{
-	background: #fff;
+  background: #fff;
 }
