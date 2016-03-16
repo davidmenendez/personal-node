@@ -15,14 +15,14 @@ gulp.task('uglify', function() {
 gulp.task('styles', function() {
 	gulp.src('./src/sass/**/styles.scss')
 	.pipe(sass({
-		//outputStyle: 'compressed'
-		outputStyle: 'expanded'
+		outputStyle: 'compressed'
+		//outputStyle: 'expanded'
 	}).on('error', sass.logError))
 	.pipe(gulp.dest('public/css/'))
 	.pipe(browserSync.stream());
 });
 
-gulp.task('watcb', ['styles', 'nodemon'], function() {
+gulp.task('watch', ['styles', 'uglify', 'nodemon'], function() {
 	browserSync.init(null, {
 		proxy: 'http://localhost:8000',
 		files: ['public/**/*.*'],
