@@ -1,15 +1,14 @@
-/*base*/
+/*~~~BASE~~~*/
 *, *:before, *:after{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  transition: all 200ms ease-in;
 }
 html{
   font-family: $font;
   color: $black;
   font-size: 100%;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.5;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -26,137 +25,6 @@ ul{
   margin-left: 40px;
 }
 
-/*structures*/
-.container{
-  max-width: 900px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 15px;
-  overflow: hidden;
-}
-.row{
-  margin: 0 -15px 15px -15px;
-  &--nomargin{
-    margin: 0;
-  }
-  &:before{
-    content: " ";
-    display: table;
-  }
-  &:after{
-    content: " ";
-    display: table;
-    clear: after;
-  }
-}
-.col{
-  float: left;
-  padding: 0 15px;
-  float: none;
-  margin-bottom: 15px;
-  width: 100%;
-  &--nopad{
-    padding: 0;
-    margin: 0;
-  }
-  @include breakpoint(sm){
-    float: left;
-    @for $i from 1 through 12{
-      &#{$i}{
-        width: (1 / $i) * 100%;
-      }
-    }
-  }
-}
-
-/*general classes*/
-.button{
-  min-width: 100%;
-  margin: 0 0 15px 0;
-  display: inline-block;
-  padding: 15px;
-  text-align: center;
-  background: $red;
-  color: $offwhite;
-  border: 2px solid transparent;
-  @include breakpoint(sm){
-    margin: 0 15px 15px 0;
-    min-width: 200px;
-  }
-  &:hover{
-    background: transparent;
-    color: $black;
-    border-color:$black;
-  }
-}
-
-.--whitebg{
-  background: #fff;
-}
-.banner{
-  margin-bottom: 30px;
-}
-
-.workpreview{
-  a{
-    display: block;
-    margin: 0;
-  }
-  figure{
-    position: relative;
-    overflow: hidden;
-    color: #fff;
-    background: #E25454;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    &:hover figcaption{
-      opacity: 1;
-      &:before{
-        -webkit-transform: scale(1);
-        transform: scale(1);
-      }
-    }
-    &:hover h3{
-      -webkit-transform: scale(1);
-      transform: scale(1);
-    }
-    &:hover img{
-      opacity: .1;
-      -webkit-transform: scale(1);
-      transform: scale(1);
-    }
-  }
-  figcaption{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    padding: 40px;
-    opacity: 0;
-    text-align: center;
-    &:before{
-      position: absolute;
-      top: 30px;
-      right: 30px;
-      bottom: 30px;
-      left: 30px;
-      border: 1px solid #fff;
-      content: '';
-      -webkit-transform: scale(1.1);
-      transform: scale(1.1);
-    }
-  }
-  img{
-    transition: all 200ms linear;
-    transform: scale(1.12);
-  }
-  h3{
-    -webkit-transform: scale(1.5);
-    transform: scale(1.5);
-  }
-}
-
 .modal{
   position: fixed;
   height: 100%;
@@ -165,6 +33,7 @@ ul{
   left: 0;
   background: #eee;
   opacity: 0;
+  transition: all 200ms ease-in;
 }
 .--modal-background{
   opacity: 0;

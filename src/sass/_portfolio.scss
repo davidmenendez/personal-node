@@ -1,0 +1,71 @@
+/*~~~PORTFOLIO~~~*/
+.banner{
+  margin-bottom: 30px;
+}
+
+.workpreview{
+  a{
+    display: block;
+    margin: 0;
+  }
+  figure{
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+    background: #E25454;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transition: all 200ms ease-in;
+    &:hover figcaption{
+      opacity: 1;
+      transition: all 200ms ease-in;
+      &:before{
+        transform: scale(1);
+        transition: all 200ms ease-in;
+      }
+    }
+    &:hover h3{
+      transform: scale(1);
+      transition: all 200ms ease-in;
+    }
+    &:hover img{
+      opacity: .1;
+      transform: scale(1);
+      transition: all 200ms ease-in;
+    }
+  }
+  figcaption{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    padding: 40px;
+    opacity: 0;
+    text-align: center;
+    transition: all 200ms ease-in;
+    display: flex;
+    align-items: center;
+    &:before{
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      bottom: 30px;
+      left: 30px;
+      border: 1px solid #fff;
+      content: '';
+      transform: scale(1.1);
+      transition: all 200ms ease-in;
+    }
+  }
+  img{
+    transform: scale(1.12);
+    transition: all 200ms ease-in;
+    width: 100%;
+  }
+  h3{
+    transform: scale(1.5);
+    transition: all 200ms ease-in;
+    margin: 0 auto;
+  }
+}

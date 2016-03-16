@@ -1,0 +1,40 @@
+/*~~~SCAFFOLDING~~~*/
+.container{
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 15px;
+}
+.row{
+  margin: 0 -15px 15px -15px;
+  &--nomargin{
+    margin: 0;
+  }
+  &:before{
+    content: " ";
+    display: table;
+  }
+  &:after{
+    content: " ";
+    display: table;
+    clear: both;
+  }
+}
+.col{
+  float: left;
+  padding: 0 15px;
+  float: none;
+  width: 100%;
+  &--nopad{
+    padding: 0;
+    margin: 0;
+  }
+  @include breakpoint(sm){
+    float: left;
+    @for $i from 1 through 12{
+      &#{$i}{
+        width: (1 / $i) * 100%;
+      }
+    }
+  }
+}

@@ -1,21 +1,19 @@
-/*nav*/
-/*defauts*/
+/*~~~NAV~~~*/
 nav{
   text-transform: uppercase;
+  max-width: 600px;
+  margin: 0 auto;
   ul{
     list-style: none;
-    max-width: 600px;
-    width: 100%;
-    margin: 0 auto;
+    margin: 0;
   }
   li{
-    float: none;
-    width: 100%;
     &:after{
       content: "";
       border-bottom: 5px solid transparent;
       display: block;
       transform: translate(0, 5px);
+      transition: all 200ms ease-in;
     }
     &:hover{
       &:after{
@@ -23,36 +21,43 @@ nav{
         transform: translate(0, 0);
       }
     }
-    @include breakpoint(sm){
-      float: left;
-      width: 25%;
-    }
   }
   a{
-    color: $white;
     display: block;
-    padding: 5px 0;
   }
 }
 
-#defaultNav{
-  ul{
-    max-width: 100%;
+.nav{
+  &-main{
+    a{
+      color: $white;
+    }
   }
-  li{
-    float: none;
-    display: inline-block;
-    @include breakpoint(sm){
-      width: auto;
+  &-default{
+    max-width: none;
+    margin: 0;
+    h1{
+      a{
+        &:hover{
+          color: $red;
+        }
+      }
+    }
+    li{
+      display: inline-block;
       margin: 0 15px 0 0;
     }
+    a{
+      color: $black;
+    }
   }
-  a{
-    color: $black;
+  &-footer{
+    a{
+      color: $white;
+    }
   }
-}
-
-&.nav--active:after{
-  border-color: $red;
-  transform: translate(0, 0);
+  &--active:after{
+    border-color: $red;
+    transform: translate(0, 0);
+  }
 }
