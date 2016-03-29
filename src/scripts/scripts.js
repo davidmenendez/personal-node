@@ -1,4 +1,3 @@
-
 function getPortfolioEntry(link){
 	var request = new XMLHttpRequest();
 	request.open('GET', link, true);
